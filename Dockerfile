@@ -45,5 +45,4 @@ RUN mkdir -p /freebsd/usr/local/etc /repo \
  && ln -s /freebsd/usr/share/keys /usr/share/keys \
  && pkg -r /freebsd update
 
-ENV INSTALL_AS_USER=1
 ENTRYPOINT ["pkg", "-r", "/freebsd"]
