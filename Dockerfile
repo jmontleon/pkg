@@ -38,9 +38,9 @@ RUN cd pkg \
  && make install
 
 RUN mkdir -p /freebsd/usr/local/etc /repo \
- && curl https://download.freebsd.org/ftp/releases/amd64/12.1-RELEASE/base.txz | \
+ && curl https://download.freebsd.org/ftp/releases/amd64/11.4-RELEASE/base.txz | \
 		bsdtar -xf - -C /freebsd ./lib ./usr/lib ./usr/libdata ./usr/include ./usr/share/keys ./etc \
- && echo 'ABI = "FreeBSD:12:amd64"; REPOS_DIR = ["/freebsd/etc/pkg"]; REPO_AUTOUPDATE = NO; RUN_SCRIPTS = NO;' > \
+ && echo 'ABI = "FreeBSD:11:amd64"; REPOS_DIR = ["/freebsd/etc/pkg"]; REPO_AUTOUPDATE = NO; RUN_SCRIPTS = NO;' > \
     /freebsd/usr/local/etc/pkg.conf \
  && ln -s /freebsd/usr/share/keys /usr/share/keys \
  && pkg -r /freebsd update
