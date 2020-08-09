@@ -24,6 +24,7 @@ RUN dnf -y update \
            musl-devel \
            openssl-devel \
            pkgconf \
+	   svn \
            xz-devel \
            xz-lzma-compat \
            zlib-devel \
