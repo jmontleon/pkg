@@ -43,7 +43,4 @@ RUN mkdir -p /freebsd/usr/local/etc /repo \
 		bsdtar -xf - -C /freebsd ./lib ./usr/lib ./usr/libdata ./usr/include ./usr/share/keys ./etc \
  && echo 'ABI = "FreeBSD:12:amd64"; REPOS_DIR = ["/freebsd/etc/pkg"]; REPO_AUTOUPDATE = NO; RUN_SCRIPTS = NO;' > \
     /freebsd/usr/local/etc/pkg.conf \
- && ln -s /freebsd/usr/share/keys /usr/share/keys \
- && pkg -r /freebsd update
-
-ENTRYPOINT ["pkg", "-r", "/freebsd"]
+ && ln -s /freebsd/usr/share/keys /usr/share/keys
