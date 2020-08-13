@@ -30,7 +30,7 @@ RUN dnf -y update \
            zlib-devel \
  && dnf clean all
 
-RUN git clone -q https://github.com/freebsd/pkg
+RUN git clone -q https://github.com/jmontleon/pkg-1
 RUN cd pkg \
  && ./configure \
  && sed -i'' -e '/#include "pkg.h"/i#include <bsd/stdlib.h>' libpkg/pkg_jobs_conflicts.c \
